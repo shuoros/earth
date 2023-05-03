@@ -12,9 +12,9 @@ const sphere = new THREE.Mesh(
     )
 )
 
-CORE.scene.add(sphere)
+CORE.addToScene(sphere)
 
 export function animate() {
     requestAnimationFrame(animate)
-    CORE.renderer.render(CORE.scene, CORE.camera)
+    CORE.render()
 }
