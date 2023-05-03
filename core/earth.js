@@ -10,7 +10,7 @@ const sphere = new THREE.Mesh(
             vertexShader,
             fragmentShader,
             uniforms: {
-                earth: {
+                earthTexture: {
                     value: new THREE.TextureLoader().load('01-3.jpg')
                 }
             }
