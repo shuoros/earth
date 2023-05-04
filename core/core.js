@@ -15,10 +15,12 @@ renderer.setSize(innerWidth, innerHeight)
 renderer.setPixelRatio(window.devicePixelRatio)
 document.body.appendChild(renderer.domElement)
 
-export function render() {
-    renderer.render(scene, camera)
-}
-
 export function addToScene(sphere) {
     scene.add(sphere)
+}
+
+export function animate(animation) {
+    requestAnimationFrame(animate)
+    renderer.render(scene, camera)
+    animation()
 }

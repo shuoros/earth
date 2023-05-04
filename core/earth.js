@@ -1,9 +1,8 @@
 import * as THREE from 'three'
-import * as CORE from './core.js'
-import vertexShader from './shaders/vertex.glsl'
-import fragmentShader from './shaders/fragment.glsl'
+import vertexShader from './shaders/earth/vertex.glsl'
+import fragmentShader from './shaders/earth/fragment.glsl'
 
-const sphere = new THREE.Mesh(
+export const mesh = new THREE.Mesh(
     new THREE.SphereGeometry(5, 50, 50),
     new THREE.ShaderMaterial(
         {
@@ -18,9 +17,6 @@ const sphere = new THREE.Mesh(
     )
 )
 
-CORE.addToScene(sphere)
-
 export function animate() {
-    requestAnimationFrame(animate)
-    CORE.render()
+    mesh.rotation.y += 0.001
 }
